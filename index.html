@@ -105,9 +105,6 @@
   .board{
     position: relative;
     margin-top: 0px;
-   /* width: min(88vw, 620px);
-    aspect-ratio: 1 / 1;
-    margin: 0;*/
   }
 
   .board.circle-mode{
@@ -162,10 +159,8 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    /*border-radius: 25px;*/
     border: 1.5px solid var(--empty-line);
     background: rgba(255,255,255,0.03);
-    /*cursor: pointer;*/
     user-select:none;
     font-weight: 700;
     font-size: 17px;
@@ -338,17 +333,8 @@
     </div>
 
     <footer>
-      <!--
-      <div class="legend">
-        <div class="item"><span class="swatch win"></span>Victoire</div>
-        <div class="item"><span class="swatch loss"></span>Défaite</div>
-        <div class="item"><span class="swatch draw"></span>Nul</div>
-        <div class="item"><span class="swatch empty"></span>À jouer</div>
-      </div>
-    -->
       <div class="tally" id="tally"></div>
       <button class="reset" id="reset">Réinitialiser le tableau</button>
-     <!-- <p class="hint">Cliquez sur une case pour faire défiler le résultat : à jouer → victoire → défaite → nul.</p> -->
     </footer>
   </div>
 

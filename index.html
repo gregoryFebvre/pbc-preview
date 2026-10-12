@@ -445,15 +445,22 @@
   const board = document.getElementById('board');
   const tallyEl = document.getElementById('tally');
 
+  // Title en fonction du type de match
+  const NB_BRASSAGE = 7;            // les NB_BRASSAGE premiers matchs
+  const AMICAUX = new Set([1]);     // indices des matchs amicaux - e.g. Set([1, 12, 20])
+
+  const typeMatch = i =>
+    AMICAUX.has(i) ? 'Amical'
+    : i < NB_BRASSAGE ? 'Brassage'
+    : ''; // Championnat
+
   for(let i=0;i<TOTAL;i++){
     const el = document.createElement('div');
     el.className = 'slot';
     el.dataset.state = '0';
     el.dataset.index = i;
     el.dataset.libelle = libelles[i];
-    if (i < 7) {
-      el.title = 'Brassage';
-    }
+    el.title = typeMatch(i);
     el.innerHTML = '<span class="libelle">'+scores[i]+'</span><span class="num">'+(i+1)+'</span><span class="letter"></span><span class="libelle2">'+libelles[i]+'</span>';
     slotsEl.appendChild(el);
   }

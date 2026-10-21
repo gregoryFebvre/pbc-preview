@@ -435,10 +435,12 @@
   const NB_BRASSAGE = 7;            // les NB_BRASSAGE premiers matchs
   const AMICAUX = new Set([0]);     // indices des matchs amicaux - e.g. Set([0, 12, 20])
 
+  
   const typeMatch = i =>
-    AMICAUX.has(i) ? 'Amical'
+    !libelles[i] ? '' // Non défini
+    : AMICAUX.has(i) ? 'Amical'
     : i < NB_BRASSAGE ? 'Brassage'
-    : ''; // Championnat
+    : 'Championnat';
 
   for(let i=0;i<TOTAL;i++){
     const el = document.createElement('div');

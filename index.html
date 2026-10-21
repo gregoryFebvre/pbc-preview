@@ -349,10 +349,10 @@
     "LAVEDAN",
     "OSSUN",
     "TMB",
-    "CUGNAUX",
     "",
     "",
-    "BLAGNAC",
+    "",
+    "",
     "",
     "",
     "",
@@ -435,7 +435,7 @@
   const NB_BRASSAGE = 7;            // les NB_BRASSAGE premiers matchs
   const AMICAUX = new Set([0]);     // indices des matchs amicaux - e.g. Set([0, 12, 20])
 
-  
+  // Détermination du type de match en fonction de l'indice et des libellés définis
   const typeMatch = i =>
     !libelles[i] ? '' // Non défini
     : AMICAUX.has(i) ? 'Amical'
